@@ -1,132 +1,97 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 
-const BookingSummary = () => {
-  // Replace the following values with your actual data or use React Router to get the data from the URL query
-  const vesselName = 'Vessel Name';
-  const name = 'John Doe';
-  const age = '30';
-  const email = 'john.doe@example.com';
-  const phoneNumber = '1234567890';
-  const price = '1500';
+const OrderSummaryCard = () => {
+  const containerStyle = {
+    height: '100vh',
+    background:
+      'top/contain url(/pattern-background-desktop.svg) no-repeat, #E1E9FF',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
+
+  const wrapperStyle = {
+    width: '25rem',
+    background: 'white',
+    fontFamily: 'Red Hat Display, sans-serif',
+    boxShadow: '0px 5px 15px 1px rgb(227, 227, 227)',
+    overflow: 'hidden',
+    borderRadius: '25px',
+    padding: '3rem',
+    // paddingTop: '2rem',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
+  const imgStyle = {
+    width: '35vw',
+    height: '30vh',
+    marginTop: "-3rem"
+  };
+
+  const annualPlanStyle = {
+    color: 'hsl(223, 47%, 23%)',
+    fontWeight: 700,
+  };
+
+ const subscriptionStyle = {
+    display: "flex",
+    flexDirection:"row",
+    backgroundColor: "hsl(225, 100%, 98%)",
+    borderRadius: "12px",
+    width: "100%",
+    alignItems: "center"
+}
+
+  const btnStyle = {
+    width: '100%',
+    margin: '1.7rem',
+    padding: '.8rem',
+    backgroundColor: 'hsl(245, 75%, 52%)',
+    color: 'white',
+    borderRadius: '10px',
+    border: 'none',
+    fontWeight: 700,
+  };
+
+  const subscriptionNotesStyle = {
+    width: "auto",
+    height: "auto",
+    margin: "1.5rem"
+  }
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundImage: `url('/search-background.jpg')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-    }}>
-      <h2 style={{
-        fontSize: '32px',
-        fontWeight: 'bold',
-        color: '#fff',
-        marginBottom: '16px',
-      }}>Booking Summary</h2>
-      <div style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.9)',
-        borderRadius: '8px',
-        padding: '20px',
-        width: '100%',
-        maxWidth: '400px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      }}>
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '10px',
-        }}>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '12px',
-            backgroundColor: '#fff',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            fontSize: '16px',
-            color: '#333',
-          }}>
-            <span>Vessel Name:</span>
-            <span>{vesselName}</span>
+    <main style={containerStyle} className="wrapper">
+      <div style={wrapperStyle} className="container">
+        <img
+          id="img"
+          src="/illustration-hero.svg"
+          alt=""
+          style={imgStyle}
+        />
+        <h2 className="title">Order Summary</h2>
+        <p className="subtitle">
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+        <div className="subscribtion" style={subscriptionStyle}>
+          <img id="notes" style={subscriptionNotesStyle} src="/icon-music.svg" alt="" />
+          <div>
+            <p className="annualPlan">Annual Plan</p>
+            <p className="pricePerYear">$59.99/year</p>
           </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '12px',
-            backgroundColor: '#fff',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            fontSize: '16px',
-            color: '#333',
-          }}>
-            <span>Name:</span>
-            <span>{name}</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '12px',
-            backgroundColor: '#fff',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            fontSize: '16px',
-            color: '#333',
-          }}>
-            <span>Age:</span>
-            <span>{age}</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '12px',
-            backgroundColor: '#fff',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            fontSize: '16px',
-            color: '#333',
-          }}>
-            <span>Email:</span>
-            <span>{email}</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '12px',
-            backgroundColor: '#fff',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            fontSize: '16px',
-            color: '#333',
-          }}>
-            <span>Number:</span>
-            <span>{phoneNumber}</span>
-          </div>
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '12px',
-            backgroundColor: '#fff',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            fontSize: '16px',
-            color: '#333',
-          }}>
-            <span>Price:</span>
-            <span>{price}</span>
-          </div>
+          <a className="change" href="#">
+            Change
+          </a>
         </div>
+        <button className="btn" style={btnStyle}>
+          Proceed to Payment
+        </button>
+        <p className="cancel">Cancel Order</p>
       </div>
-    </div>
+    </main>
   );
 };
 
-export default BookingSummary;
+export default OrderSummaryCard;
