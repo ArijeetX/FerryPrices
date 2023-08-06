@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const OrderSummaryCard = () => {
   const containerStyle = {
@@ -18,7 +18,6 @@ const OrderSummaryCard = () => {
     overflow: 'hidden',
     borderRadius: '25px',
     padding: '3rem',
-    // paddingTop: '2rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -27,22 +26,8 @@ const OrderSummaryCard = () => {
   const imgStyle = {
     width: '35vw',
     height: '30vh',
-    marginTop: "-3rem"
+    marginTop: '-3rem',
   };
-
-  const annualPlanStyle = {
-    color: 'hsl(223, 47%, 23%)',
-    fontWeight: 700,
-  };
-
- const subscriptionStyle = {
-    display: "flex",
-    flexDirection:"row",
-    backgroundColor: "hsl(225, 100%, 98%)",
-    borderRadius: "12px",
-    width: "100%",
-    alignItems: "center"
-}
 
   const btnStyle = {
     width: '100%',
@@ -55,37 +40,35 @@ const OrderSummaryCard = () => {
     fontWeight: 700,
   };
 
-  const subscriptionNotesStyle = {
-    width: "auto",
-    height: "auto",
-    margin: "1.5rem"
-  }
+  const subtitleStyle = {
+    textAlign: 'center', // Center the subtitle text
+  };
+
+  const imageUrl = './illustration-hero.svg';
 
   return (
     <main style={containerStyle} className="wrapper">
       <div style={wrapperStyle} className="container">
-        <img
-          id="img"
-          src="/illustration-hero.svg"
-          alt=""
-          style={imgStyle}
-        />
-        <h2 className="title">Order Summary</h2>
-        <p className="subtitle">
-          You can now listen to millions of songs, audiobooks, and podcasts on
-          any device anywhere you like!
+        <img id="img" src={imageUrl} alt="Illustration" style={imgStyle} />
+        <p className="subtitle" style={subtitleStyle}>
+          Your ferry booking is confirmed! Get ready for a delightful journey on the waves.
         </p>
-        <div className="subscribtion" style={subscriptionStyle}>
-          <img id="notes" style={subscriptionNotesStyle} src="/icon-music.svg" alt="" />
-          <div>
-            <p className="annualPlan">Annual Plan</p>
-            <p className="pricePerYear">$59.99/year</p>
-          </div>
-          <a className="change" href="#">
-            Change
-          </a>
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Vessel Name:</strong> MV Ocean Ferry
         </div>
-        <button className="btn" style={btnStyle}>
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Name:</strong> John Doe
+        </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Age:</strong> 30
+        </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Email:</strong> johndoe@example.com
+        </div>
+        <div style={{ marginBottom: '1rem' }}>
+          <strong>Amount:</strong> $50.00
+        </div>
+        <button type="button" className="btn" style={btnStyle}>
           Proceed to Payment
         </button>
         <p className="cancel">Cancel Order</p>

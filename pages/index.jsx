@@ -3,7 +3,6 @@ import FerryCard from "../components/ferrycard";
 import axios from "axios";
 import styles from "./index.module.css";
 
-
 const HomePage = () => {
   const [arrival, setArrival] = useState('Port Blair');
   const [destination, setDestination] = useState('Shaheed Dweep');
