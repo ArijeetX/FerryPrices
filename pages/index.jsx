@@ -4,28 +4,28 @@ import axios from "axios";
 import styles from "./index.module.css";
 
 const HomePage = () => {
-  const [arrival, setArrival] = useState('Port Blair');
-  const [destination, setDestination] = useState('Shaheed Dweep');
+  const [arrival, setArrival] = useState("Port Blair");
+  const [destination, setDestination] = useState("Shaheed Dweep");
   const [selectedLocation, setselectedLocation] = useState(false);
   const [filteredTrips, setfilteredTrips] = useState([]);
   const [ferryTrips, setferryTrips] = useState([]);
   const [selectedDate, setSelectedDate] = useState("");
 
-    const handleSearch = () => {
+  const handleSearch = () => {
     // Filter the data based on the selected arrival and destination
-    const trips = []
+    const trips = [];
     // Update the filtered data state
-      for (const trip of ferryTrips) {
-        console.log(trip.from === arrival);
-        if (trip.from === arrival && trip.to === destination) {
-          trips.push(trip)
-       }
+    for (const trip of ferryTrips) {
+      console.log(trip.from === arrival);
+      if (trip.from === arrival && trip.to === destination) {
+        trips.push(trip);
       }
-      console.log(trips)
+    }
+    console.log(trips);
     setfilteredTrips(trips);
     console.log(filteredTrips);
     // Perform the search action here with arrival and destination values
-    setselectedLocation(true)
+    setselectedLocation(true);
   };
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const HomePage = () => {
     let body = {
       fromTS: currTime,
       toTS: laterTime,
-    }
+    };
     let data = JSON.stringify(body);
 
     let config = {
@@ -55,11 +55,10 @@ const HomePage = () => {
       .catch((error) => {
         console.log(error);
       });
-
   }, []);
 
   return (
-    <div className={styles.container} style={{ backgroundImage: "url('/titanic.jpg')" }}>
+    <div className={styles.container}>
       <h1 className={styles.heading}>Ferry Trip Search</h1>
       <div className={styles.inputContainer}>
         <div className={styles.formGroup}>
@@ -89,7 +88,6 @@ const HomePage = () => {
           </select>
         </div>
         <div className={styles.formGroup}>
-
           <label htmlFor="dateSelect">Date:</label>
           <input
             required
@@ -104,15 +102,20 @@ const HomePage = () => {
           Search
         </button>
       </div>
-      {selectedLocation && (filteredTrips.length > 0 ? (
-        <div className={styles.tripContainer}>
-          {filteredTrips.map((ferrydata) => (
-            <FerryCard key={ferrydata.id} ferrydata={ferrydata} />
-          ))}
-        </div>
-      ) : (
-        <h1>No trips found</h1>
-      ))}
+      {selectedLocation &&
+        (filteredTrips.length > 0 ? (
+          <div className={styles.tripContainer}>
+            {filteredTrips.map((ferrydata) => (
+              
+                <FerryCard
+                  key={ferrydata.id}
+                  ferrydata={ferrydata}
+                />
+            ))}
+          </div>
+        ) : (
+          <h1>No trips found</h1>
+        ))}
     </div>
   );
 };

@@ -27,20 +27,26 @@ const FerryCard = (props) => {
         <p style={styles.vesselOperator}>{vesselOperator}</p>
       </div>
       <div style={styles.timeContainer}>
-        <p>
-          Departure Time: {dTime.hour}:{dTime.minute}
-        </p>
-        <p>
-          Arrival Time: {aTime.hour}:{aTime.minute}
-        </p>
-      </div>
-      <div style={styles.routeContainer}>
-        <p>From: {from}</p>
-        <p>To: {to}</p>
-        <p>PMB: {pmb}</p>
+        <div style={styles.dept}>
+          <p style={{ fontSize: "20px" }}>
+            {dTime.hour}:{dTime.minute}
+          </p>
+          <p style={{ fontSize: "10px", marginTop: "-35%" }}>{from}</p>
+        </div>
+        <div style={styles.duration}>
+        <p style={{ fontSize: "20px", color: "grey" }}>
+            {Math.abs(dTime.hour-aTime.hour)}:{Math.abs(dTime.minute-aTime.minute)}
+          </p>
+        </div>
+        <div style={styles.arr}>
+          <p style={{ fontSize: "20px" }}>
+            {aTime.hour}:{aTime.minute}
+          </p>
+          <p style={{ fontSize: "10px", marginTop: "-35%" }}>{to}</p>
+        </div>
       </div>
       <div style={styles.footer}>
-        <Link href={{pathname: '/Booking', query: {vesselName}}}>
+        <Link href={{ pathname: "/Booking", query: { vesselName } }}>
           <button
             style={styles.bookButton}
             onClick={() => {
@@ -63,13 +69,16 @@ const styles = {
     padding: "16px",
     marginBottom: "16px",
     backgroundColor: "#fff",
-    maxWidth: "400px",
-  },
-  header: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+  },
+  header: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     marginBottom: "8px",
+    marginRight: "20px",
   },
   vesselName: {
     margin: "0",
@@ -81,6 +90,19 @@ const styles = {
   },
   timeContainer: {
     marginBottom: "8px",
+    marginLeft: "50px",
+    display: "flex",
+    flexDirection: "row",
+    marginRight: "40px",
+  },
+  dept: {
+    marginRight: "150px",
+  },
+  duration: {
+    marginRight: "150px",
+  },
+  arr: {
+    marginRight: "150px",
   },
   routeContainer: {
     marginBottom: "8px",

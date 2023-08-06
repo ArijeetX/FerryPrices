@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import OrderSummaryCard from './BookingSummary';
 
 function Copyright() {
   return (
@@ -28,7 +29,7 @@ function Copyright() {
   );
 }
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Shipping address', 'Payment details', 'Order Summary'];
 
 function getStepContent(step) {
   switch (step) {
@@ -37,7 +38,7 @@ function getStepContent(step) {
     case 1:
       return <PaymentForm />;
     case 2:
-      return <Review />;
+      return <OrderSummaryCard />;
     default:
       throw new Error('Unknown step');
   }
@@ -48,6 +49,7 @@ export default function Checkout() {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    
   };
 
   const handleBack = () => {
