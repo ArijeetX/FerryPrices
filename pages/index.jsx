@@ -3,6 +3,7 @@ import FerryCard from "../components/ferrycard";
 import axios from "axios";
 import styles from "./index.module.css";
 
+
 const HomePage = () => {
   const [arrival, setArrival] = useState("Port Blair");
   const [destination, setDestination] = useState("Shaheed Dweep");
@@ -59,7 +60,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Ferry Trip Search</h1>
+      <h1 className={styles.heading}>BookMyBoat</h1>
       <div className={styles.inputContainer}>
         <div className={styles.formGroup}>
           <label htmlFor="fromSelect">From:</label>

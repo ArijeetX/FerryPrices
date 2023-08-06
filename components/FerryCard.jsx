@@ -17,6 +17,7 @@ const FerryCard = (props) => {
 
   const handleBookNow = () => {
     // Implement the booking action here or navigate to a booking page
+    
     console.log("Book now clicked for ferry with ID:", _id);
   };
 
@@ -68,10 +69,11 @@ const styles = {
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     padding: "16px",
     marginBottom: "16px",
-    backgroundColor: "#fff",
+    backgroundColor: "rgba(255, 255, 255, 0.5)",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+
   },
   header: {
     display: "flex",

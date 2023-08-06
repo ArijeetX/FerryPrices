@@ -13,10 +13,9 @@ import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
-import Review from './Review';
 import OrderSummaryCard from './BookingSummary';
 
-function Copyright() {
+function Booking() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
@@ -57,7 +56,7 @@ export default function Checkout() {
   };
 
   return (
-    <React.Fragment>
+    <React.Fragment >
       <CssBaseline />
       <AppBar
         position="absolute"
@@ -74,7 +73,7 @@ export default function Checkout() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+      <Container component="main" maxWidth="sm" sx={{ mb: 4 }} >
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
           <Typography component="h1" variant="h4" align="center">
             Checkout
@@ -118,7 +117,7 @@ export default function Checkout() {
             </React.Fragment>
           )}
         </Paper>
-        <Copyright />
+        <Booking />
       </Container>
     </React.Fragment>
   );

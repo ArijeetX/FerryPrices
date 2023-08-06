@@ -24,8 +24,8 @@ const OrderSummaryCard = () => {
   };
 
   const imgStyle = {
-    width: '35vw',
-    height: '30vh',
+    width: '30vw',
+    height: '35vh',
     marginTop: '-3rem',
   };
 
@@ -33,7 +33,7 @@ const OrderSummaryCard = () => {
     textAlign: 'center', // Center the subtitle text
   };
 
-  const imageUrl = './illustration-hero.svg';
+  const imageUrl = './ship-image-summary.jpg';
 
   return (
     <main style={containerStyle} className="wrapper">
@@ -43,19 +43,19 @@ const OrderSummaryCard = () => {
           Your ferry booking is confirmed! Get ready for a delightful journey on the waves.
         </h4>
         <div style={{ marginBottom: '1rem' }}>
-          <strong>Vessel Name:</strong> MV Ocean Ferry
+          <strong>Vessel Name:</strong> Green Ocean 1
         </div>
         <div style={{ marginBottom: '1rem' }}>
-          <strong>Name:</strong> John Doe
+          <strong>Name:</strong> Arijeet Mandal
         </div>
         <div style={{ marginBottom: '1rem' }}>
-          <strong>Age:</strong> 30
+          <strong>Age:</strong> 23
         </div>
         <div style={{ marginBottom: '1rem' }}>
-          <strong>Email:</strong> johndoe@example.com
+          <strong>Email:</strong> arijeetmandal666@gmail.com
         </div>
         <div style={{ marginBottom: '1rem' }}>
-          <strong>Amount:</strong> $50.00
+          <strong>Amount:</strong> 1500.00
         </div>
       </div>
     </main>
